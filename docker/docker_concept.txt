@@ -1,0 +1,10 @@
+docker
+------
+- runtime
+	- basically allow us to run and stop the containers
+	- runc -> low level runtime
+	- containerd -> higher level, managing runc, data
+	connection
+- engine
+	- 
+- orchestration

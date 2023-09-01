@@ -1,0 +1,18 @@
+yaml = yaml ain't markup language
+data format used to exchange data, it is similar to xml and json.
+in yaml we can store only data and not commands.
+
+data serialisation
+-------------------
+
+converting of the data objects into a complex data objects or into a stream of storage.
+reverse process is deserialization
+
+benefits
+-------
+1. simple and easy to read
+2. it has a strict syntax - indentation is important
+3. easily like convertable to json, xml.
+4. most languages use yaml
+5. more powerful when representing complex data
+6. various tools available.

@@ -1,0 +1,79 @@
+student: !!seq
+ - marks
+ - name
+ - roll_no
+
+# like this also
+cities: [bangalore, new delhi]
+
+# some of the keys of the seq will be empty
+# sparse seq
+sparse seq:
+ - hey
+ - how
+ - 
+ - Null
+ - sup
+
+# nested sequence
+-
+ - mango
+ - apple
+ - banana
+-
+ - hey
+ - how
+ - what
+
+# key: value pairs are called maps
+!!map
+
+# nested mappings: map within an map
+name: Souvik Chakraborty
+ role:
+  age: 78
+  job: student
+
+# same as
+name: Souvik Chakraborty
+role: {age: 78, job: student}
+
+# pairs: keys may have multiple values
+# !!pairs
+pairexample: !!pairs
+ - job: Student
+ - job: teacher
+
+# This will be an array of hash table containing arrays
+# same as
+pairexample: !!pairs [job: student, job: teacher]
+
+# !!set will allow us to have unique values
+names: !!set
+ ? Souvik
+ ? wgx
+ ? hipster
+
+# dictionary !!omap
+people: !!omap
+ - Souvik:
+    - name: Souvik Chakraborty
+    - age: 22
+    - height: 5.9
+ - wgx:
+   - name: wireGhost
+   - age: 22
+   - height: 5.9
+
+# reusing some properties using anchors
+linkings: &likes
+ favFruit: mango
+ dislikes: grapes
+
+person1:
+ name: Souvik Chakraborty
+ <<: *likes
+person2:
+ name: hipster
+ <<: *likes # it will all the likes
+ dislikes: barries # override the value of dislikes with barries

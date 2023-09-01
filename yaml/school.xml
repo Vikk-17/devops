@@ -1,0 +1,10 @@
+<?xml version="1.1" encoding="UTF-8">
+<School name="MVIT" principle="Someone">
+	<Students>
+		<Student>
+			<rollno>23</rollno>
+			<name>Souvik</name>
+			<marks>94</marks>
+		</Student>
+	</Students>
+</School>

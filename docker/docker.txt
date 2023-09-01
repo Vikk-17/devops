@@ -1,0 +1,152 @@
+overview:
+---------
+is an open platform for developing, shipping, and running applications.
+enables us to separate our applications from our infrastructure so we
+can deliver the software quickly.
+with docker, we can manage our infrastructure in the same ways we manage
+our applications.
+
+platfom:
+--------
+docker provides the ability to package and run the application in a
+loosely isolated enviroment called container. The isolations and
+security lets us to run many containers simultaneously on a given
+host. containers are lightweight and contain everything needed to
+run the application, so we don't need to rely on what's installed on
+the host. We can share containers while we work, and be sure that every
+one we share with gets the same container that works in the same way.
+
+* docker provides tooling and a platform to manage the lifecycle of
+our containers:
+	- develop our app and its supporting components using containers
+	- the containers becomes the unit for distributing and testing
+	our application.
+	- when we are ready, deploy our application into our production
+	environment, as a container or an orchestrated service.
+
+significance:
+-------------
+ - fast, consistent delivery of our applications
+	-- docker streamlines the development lifecycle by allowing
+	devolpers to work in standarized environments using local 
+	containers which provide our applications and services.
+	containers are great for continuous integration and continous
+	deliver(CI/CD) workflows.
+ - responsive deployment and scaling
+	-- container based platform allows for highly portable workloads.
+	containers can run on a developer's local laptop, on a physical
+	or virtual machines in a data center, on cloud providers, or in
+	mixture of environments.
+	doceker's portability and lightweight nature also make it easy
+	to dynamically manage workloads, scaling up or tearing down
+	applications and services as business needs dictate, in near
+	real time.
+ - running more workloads on the same hardware
+	-- provides a viable, cost-effective alternatives to hypervisor-
+	based virtual machines, so we can use more of our server capacity
+	to achieve our business goals. it is perfect for high density
+	environments and for small and medium deployments where we need 
+	to do more with fewer resources.
+
+Docker Architecture:
+--------------------
+uses client-server architecture. client talks to the doceker daemon,
+which does heavy lifting of builidng, running, and distributing our
+docker containers. The docker client and daemon can run on the same
+system, or we can connect a docker client to a remote docker daemon.
+the docker client and deamon commuinate using a REST API, over UNIX
+sockets or a network interface. Another docker client is docker
+compose, that lets us work with applications consisting of a set
+of containers.
+
+the docker daemon:
+------------------
+the docker daemon (dockerd) listens for docker api requests and manages 
+docker objects such as images, containers, networks and volumes. A daemon 
+can also communicate with other daemons to manage docker service.
+
+the docker client:
+------------------
+the docker client (docker) is the primary way that many docker users
+interact with dokcer. When we use commands such as docker run, the 
+client sends these commands to dockerd, which carries them out.
+The docker command uses the docker api. docker client can communicate
+with more than one daemon.
+
+docker desktop:
+---------------
+docker desktop is an easy-to-install application for our mac, win and
+linux environment that enables us to build and share cotainerized app-
+lications and microservices. Docker desktop includes the docker daemon,
+the docker client, docker compose, docker content trust, kubernetes,
+and credential helper.
+
+docker registries:
+------------------
+the docker registry stores docker images. Docker hub is a public registry
+that anyone can use, and docker is looks for images on docker hub by
+default. We can also run our own private registry.
+
+ -- when we use the docker pull or docker run commands, docker pulls the
+required images from our configured registry. When we use the docker push
+command, docker pushes our images to our configured registry.
+
+docker objects:
+---------------
+--images
+	- an image is ready only template with instructions for creating
+	docker container. Often, an image is based on another image, with
+	some additional customization. For example, we may build an image
+	which is based on the ubuntu image, but installs the Apache web 
+	server and our application as well as the configuration details
+	needed to make our application run.
+	
+
+	we might create our own images or we might only use those created
+	by others and published in a registry. To build our own image
+	we create a dockerfile with a simple syntax for defining the steps
+	neede to create the image and run it. Each instruction in docker
+	file creates a layer in the image. When we cange the dockerfile and
+	rebuild the image, only those layers which have changed are rebuilt.
+	this is part of what makes images so lightweight, small, and fast,
+	when compared to other virtualization technologies.
+
+--containers
+	- a container is a runnable instance of an image. we can create
+	start, stop, move, or delete a container using the docker api or
+	cli. we can connect a container to one more networks, attach
+	storage to it, or even create a new image based on its current
+	state.
+	
+	By default, a container is relatively well isolated from other
+	containers and its host machine. we can control how isolated a 
+	container's network, storage or other underlying subsystems are
+	from other containers or from the host machine.
+	
+	a container is defined by its image as well as any configuration
+	options we provide to it when we create or start it. when a 
+	container is remvoed, any changes to its state that aren't stored
+	in persistent storage disappear.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

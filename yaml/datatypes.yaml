@@ -1,0 +1,47 @@
+# string variables
+myself: Souvik Chakraborty
+fruits: "kiwi"
+profile: 'devops'
+
+bio: |
+Hey my name is Souvik Chakraborty.
+I am a very nice dude.
+
+# write a single line in multiple lines
+message: >
+This will
+all be in
+single line
+
+# same as
+message: !!str this will all be in single line
+
+number: 54865
+marks: 98.76
+booleanValue: No # n, N, false, False, FALSE
+# same for true >> yes, y, Y, Yes, YES
+
+# specify the type
+zero: !!int 0
+positiveNum: !!int 45
+negativeNum: !!int -45
+binaryNum: !!int 0b11001
+octalNum: !!int 06574
+hexa: !!int 0x45
+commaValues: !!int +540_000 #540,000
+exponentialNumbers: 6.023E56
+
+# floating point numbers
+marks: !!float 56.89
+infinity: !!float .inf
+not a num: .nan
+
+
+# null
+surname: !!null Null # null, NULL, ~
+~: This is a null key
+
+# date and time
+date: !!timestamp 2002-12-14
+indiaTime: 2001-04-17T01:02:00.10 +5:30
+notimezone: 2001-04-17T01:02:43.10
